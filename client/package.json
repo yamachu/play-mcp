@@ -1,5 +1,6 @@
 {
   "name": "mcp-client",
+  "type": "module",
   "author": "yamachu",
   "license": "MIT",
   "scripts": {
