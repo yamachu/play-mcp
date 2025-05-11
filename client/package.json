@@ -11,6 +11,9 @@
     "typescript": "5.8.3"
   },
   "dependencies": {
+    "@langchain/google-genai": "0.2.8",
+    "@langchain/langgraph": "0.2.71",
+    "@langchain/mcp-adapters": "0.4.2",
     "@modelcontextprotocol/sdk": "1.11.1",
     "langchain": "0.3.24"
   }
