@@ -1,4 +1,10 @@
-.PHONY: run
+.PHONY: run run/server
+
+NODE=node
+NODE_TS=$(NODE) --experimental-transform-types
 
 run:
-	node --env-file=.env --experimental-transform-types src/index.ts
+	$(NODE_TS) --env-file=.env src/index.ts
+
+run/server:
+	$(NODE_TS) src/server.ts
