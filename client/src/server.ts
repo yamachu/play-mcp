@@ -1,6 +1,6 @@
 // from: https://github.com/modelcontextprotocol/quickstart-resources/blob/dfc92478e2b7087dfb369ad36695e8b9ff459f3f/weather-server-typescript/src/index.ts
+import { WebSocketClientTransport } from "@modelcontextprotocol/sdk/client/websocket.js";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
 const NWS_API_BASE = "https://api.weather.gov";
@@ -226,9 +226,11 @@ server.tool(
 
 // Start the server
 async function main() {
-  const transport = new StdioServerTransport();
+  const transport = new WebSocketClientTransport(
+    new URL("ws://127.0.0.1:8282")
+  );
   await server.connect(transport);
-  console.error("Weather MCP Server running on stdio");
+  console.error("Weather MCP Server running on WebSocket");
 }
 
 main().catch((error) => {
