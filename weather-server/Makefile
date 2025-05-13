@@ -4,4 +4,4 @@ NODE=node
 NODE_TS=$(NODE) --experimental-transform-types
 
 run:
-	$(NODE_TS) --env-file=.env src/index.ts
+	$(NODE_TS)  src/index.ts

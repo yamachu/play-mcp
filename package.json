@@ -2,7 +2,8 @@
   "name": "play-mcp",
   "private": true,
   "workspaces": [
-    "client"
+    "client",
+    "weather-server"
   ],
   "devDependencies": {
     "@types/node": "22.15.17",
