@@ -1,0 +1,13 @@
+{
+  "name": "play-mcp",
+  "private": true,
+  "workspaces": [
+    "client"
+  ],
+  "devDependencies": {
+    "typescript": "5.8.3"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.11.2"
+  }
+}
