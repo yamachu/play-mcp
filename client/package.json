@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@types/node": "22.15.17",
+    "@types/ws": "8.18.1",
     "typescript": "5.8.3"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "@langchain/langgraph": "0.2.71",
     "@langchain/mcp-adapters": "0.4.2",
     "@modelcontextprotocol/sdk": "1.11.1",
-    "langchain": "0.3.24"
+    "langchain": "0.3.24",
+    "ws": "8.18.2"
   }
 }
