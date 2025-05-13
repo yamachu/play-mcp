@@ -1,7 +1,10 @@
 // from: https://github.com/modelcontextprotocol/quickstart-resources/blob/dfc92478e2b7087dfb369ad36695e8b9ff459f3f/weather-server-typescript/src/index.ts
 import { WebSocketClientTransport } from "@modelcontextprotocol/sdk/client/websocket.js";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
+
+const WS_ENDPOINT = "ws://127.0.0.1:8282";
 
 const NWS_API_BASE = "https://api.weather.gov";
 const USER_AGENT = "weather-app/1.0";
@@ -224,16 +227,24 @@ server.tool(
   }
 );
 
-// Start the server
-async function main() {
-  const transport = new WebSocketClientTransport(
-    new URL("ws://127.0.0.1:8282")
-  );
-  await server.connect(transport);
-  console.error("Weather MCP Server running on WebSocket");
+function toTransport(transportType: "stdio" | "websocket" = "websocket") {
+  if (transportType === "stdio") {
+    return new StdioServerTransport();
+  } else if (transportType === "websocket") {
+    return new WebSocketClientTransport(new URL(WS_ENDPOINT));
+  } else {
+    throw new Error(`Unknown transportType: ${transportType}`);
+  }
 }
 
-main().catch((error) => {
+// Start the server
+async function main(transportType: string) {
+  const transport = toTransport(transportType as any);
+  await server.connect(transport);
+  console.error(`Weather MCP Server running on ${transport.constructor.name}`);
+}
+
+main(process.argv[2]!).catch((error) => {
   console.error("Fatal error in main():", error);
   process.exit(1);
 });
