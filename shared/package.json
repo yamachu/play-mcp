@@ -1,0 +1,9 @@
+{
+  "name": "@play-mcp/shared",
+  "type": "module",
+  "author": "yamachu",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

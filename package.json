@@ -4,7 +4,8 @@
   "workspaces": [
     "client",
     "weather-server",
-    "chrome-extension"
+    "chrome-extension",
+    "shared"
   ],
   "devDependencies": {
     "@types/node": "22.15.17",
