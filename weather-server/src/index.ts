@@ -231,6 +231,7 @@ function toTransport(transportType: "stdio" | "websocket" = "websocket") {
   if (transportType === "stdio") {
     return new StdioServerTransport();
   } else if (transportType === "websocket") {
+    // ServerがClientのTransport使うのはどうなんだ
     return new WebSocketClientTransport(new URL(WS_ENDPOINT));
   } else {
     throw new Error(`Unknown transportType: ${transportType}`);
