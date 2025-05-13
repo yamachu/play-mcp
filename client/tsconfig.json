@@ -20,5 +20,9 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "skipLibCheck": true,
+    // #region: For Node.js
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+    // #endregion
   }
 }
