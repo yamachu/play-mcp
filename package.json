@@ -3,7 +3,8 @@
   "private": true,
   "workspaces": [
     "client",
-    "weather-server"
+    "weather-server",
+    "chrome-extension"
   ],
   "devDependencies": {
     "@types/node": "22.15.17",
