@@ -1,7 +1,7 @@
 // from: https://github.com/modelcontextprotocol/quickstart-resources/blob/dfc92478e2b7087dfb369ad36695e8b9ff459f3f/weather-server-typescript/src/index.ts
-import { WebSocketClientTransport } from "@modelcontextprotocol/sdk/client/websocket.js";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { WebSocketTransport } from "@play-mcp/shared/src/WebSocketTransport.ts";
 import { z } from "zod";
 
 const WS_ENDPOINT = "ws://127.0.0.1:8282";
@@ -231,8 +231,8 @@ function toTransport(transportType: "stdio" | "websocket" = "websocket") {
   if (transportType === "stdio") {
     return new StdioServerTransport();
   } else if (transportType === "websocket") {
-    // ServerがClientのTransport使うのはどうなんだ
-    return new WebSocketClientTransport(new URL(WS_ENDPOINT));
+    const ws = new WebSocket(WS_ENDPOINT);
+    return new WebSocketTransport(ws);
   } else {
     throw new Error(`Unknown transportType: ${transportType}`);
   }
