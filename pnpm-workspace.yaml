@@ -2,3 +2,6 @@ packages:
   - client
   - shared
   - weather-server
+
+onlyBuiltDependencies:
+  - electron
