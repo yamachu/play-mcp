@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@play-mcp/shared": "workspace:*"
+    "@play-mcp/shared": "workspace:*",
+    "zod": "3.25.76"
   }
 }
