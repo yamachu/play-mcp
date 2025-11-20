@@ -1,13 +1,13 @@
 import { HumanMessage } from "@langchain/core/messages";
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
-import { createReactAgent } from "@langchain/langgraph/prebuilt";
 import { loadMcpTools } from "@langchain/mcp-adapters";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { createAgent } from "langchain";
 import { createInterface } from "node:readline/promises";
 import { WebSocket, WebSocketServer } from "ws";
 import { WebSocketTransport } from "./WebSocketTransport.ts";
 
-const rootDirname = new URL("..", import.meta.url).pathname;
+// const rootDirname = new URL("..", import.meta.url).pathname;
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 if (!GEMINI_API_KEY) {
@@ -49,7 +49,7 @@ await client.connect(transport);
 
 const tools = await loadMcpTools("weather", client);
 
-const agent = createReactAgent({ llm: model, tools });
+const agent = createAgent({ model, tools });
 
 const agentResponse = await agent.invoke({
   messages: [new HumanMessage("東京の天気を教えて")],
