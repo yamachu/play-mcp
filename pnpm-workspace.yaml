@@ -1,4 +1,11 @@
 packages:
   - client
+  - electron-client
   - shared
   - weather-server
+
+autoInstallPeers: true
+
+onlyBuiltDependencies:
+  - electron
+  - esbuild
