@@ -64,9 +64,6 @@ importers:
       bufferutil:
         specifier: 4.0.9
         version: 4.0.9
-      electron:
-        specifier: 39.2.3
-        version: 39.2.3
       langchain:
         specifier: 1.0.6
         version: 1.0.6(@langchain/core@1.0.6(openai@5.23.2(ws@8.18.3(bufferutil@4.0.9)(utf-8-validate@6.0.5))(zod@3.25.76)))(openai@5.23.2(ws@8.18.3(bufferutil@4.0.9)(utf-8-validate@6.0.5))(zod@3.25.76))(zod-to-json-schema@3.24.5(zod@3.25.76))
@@ -80,6 +77,9 @@ importers:
         specifier: 3.25.76
         version: 3.25.76
     devDependencies:
+      electron:
+        specifier: 39.2.3
+        version: 39.2.3
       vite:
         specifier: 7.2.2
         version: 7.2.2(@types/node@22.15.17)
