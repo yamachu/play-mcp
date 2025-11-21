@@ -4,5 +4,8 @@ packages:
   - shared
   - weather-server
 
+autoInstallPeers: true
+
 onlyBuiltDependencies:
   - electron
+  - esbuild

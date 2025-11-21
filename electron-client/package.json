@@ -8,13 +8,20 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "electron": "39.2.3"
+    "@google/genai": "1.30.0",
+    "@langchain/core": "1.0.6",
+    "@langchain/google-genai": "1.0.3",
+    "@langchain/langgraph": "1.0.2",
+    "@langchain/mcp-adapters": "1.0.0",
+    "bufferutil": "4.0.9",
+    "electron": "39.2.3",
+    "langchain": "1.0.6",
+    "utf-8-validate": "6.0.5",
+    "ws": "8.18.3",
+    "zod": "3.25.76"
   },
   "devDependencies": {
     "vite": "7.2.2",
     "vite-plugin-electron": "0.28.8"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": ["electron"]
   }
 }
